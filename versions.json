@@ -1,0 +1,131 @@
+{
+  "frappe_version": "v16",
+  "description": "Required dependency versions for Frappe v16 / develop",
+  "os_requirements": {
+    "ubuntu_min": "24.04",
+    "debian_min": "13",
+    "message": "Debian 13+ or Ubuntu 24.04+ recommended"
+  },
+  "dependencies": [
+    {
+      "id": "os",
+      "name": "Operating System",
+      "required": "Ubuntu 24.04+ or Debian 13+",
+      "check": "os",
+      "updatable": false,
+      "install_hint": "Upgrade your OS manually to Ubuntu 24.04+ or Debian 13+"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "required": "installed",
+      "check": "command",
+      "command": ["git", "--version"],
+      "pattern": "git version ([\\d.]+)",
+      "install_hint": "scripts/upgrades/git.sh",
+      "install_script": "scripts/upgrades/git.sh"
+    },
+    {
+      "id": "mariadb",
+      "name": "MariaDB",
+      "required": "11.8+",
+      "min_version": "11.8.0",
+      "check": "command",
+      "command": ["mariadb", "--version"],
+      "pattern": "Distrib ([\\d.]+)-MariaDB",
+      "install_hint": "scripts/upgrades/mariadb.sh",
+      "install_script": "scripts/upgrades/mariadb.sh"
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "required": "6.0+",
+      "min_version": "6.0.0",
+      "check": "command",
+      "command": ["redis-server", "--version"],
+      "pattern": "v=([\\d.]+)",
+      "install_hint": "scripts/upgrades/redis.sh",
+      "install_script": "scripts/upgrades/redis.sh"
+    },
+    {
+      "id": "wkhtmltopdf",
+      "name": "wkhtmltopdf",
+      "required": "installed",
+      "check": "command",
+      "command": ["wkhtmltopdf", "--version"],
+      "pattern": "wkhtmltopdf ([\\d.]+)",
+      "install_hint": "scripts/upgrades/wkhtmltopdf.sh",
+      "install_script": "scripts/upgrades/wkhtmltopdf.sh"
+    },
+    {
+      "id": "nvm",
+      "name": "nvm",
+      "required": "installed",
+      "check": "nvm",
+      "install_hint": "scripts/upgrades/nvm.sh",
+      "install_script": "scripts/upgrades/nvm.sh"
+    },
+    {
+      "id": "node",
+      "name": "Node.js",
+      "required": "24+",
+      "min_version": "24.0.0",
+      "check": "command",
+      "command": ["node", "-v"],
+      "pattern": "v?([\\d.]+)",
+      "install_hint": "scripts/upgrades/node.sh",
+      "install_script": "scripts/upgrades/node.sh"
+    },
+    {
+      "id": "yarn",
+      "name": "Yarn",
+      "required": "1.22+",
+      "min_version": "1.22.0",
+      "check": "command",
+      "command": ["yarn", "--version"],
+      "pattern": "([\\d.]+)",
+      "install_hint": "scripts/upgrades/yarn.sh",
+      "install_script": "scripts/upgrades/yarn.sh"
+    },
+    {
+      "id": "uv",
+      "name": "uv",
+      "required": "installed",
+      "check": "command",
+      "command": ["uv", "--version"],
+      "pattern": "uv ([\\d.]+)",
+      "install_hint": "scripts/upgrades/uv.sh",
+      "install_script": "scripts/upgrades/uv.sh"
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "required": "3.14+",
+      "min_version": "3.14.0",
+      "check": "command",
+      "command": ["python3", "--version"],
+      "pattern": "Python ([\\d.]+)",
+      "install_hint": "scripts/upgrades/python.sh",
+      "install_script": "scripts/upgrades/python.sh"
+    },
+    {
+      "id": "pip",
+      "name": "pip",
+      "required": "25.3+",
+      "min_version": "25.3.0",
+      "check": "pip",
+      "install_hint": "scripts/upgrades/pip.sh",
+      "install_script": "scripts/upgrades/pip.sh"
+    },
+    {
+      "id": "bench",
+      "name": "Bench CLI",
+      "required": "installed",
+      "check": "command",
+      "command": ["bench", "--version"],
+      "pattern": "([\\d.]+)",
+      "install_hint": "scripts/upgrades/bench.sh",
+      "install_script": "scripts/upgrades/bench.sh"
+    }
+  ]
+}
